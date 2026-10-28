@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Brinton Plays | Original Acoustic Country</title>
+<meta name="description" content="Original acoustic country from Andrew Brinton. Songs about family, home and the people who raised us.">
+<meta name="theme-color" content="#0A0A0A">
+<meta property="og:title" content="Brinton Plays">
+<meta property="og:description" content="Original acoustic country from Andrew Brinton. Songs about family, home and the people who raised us.">
+<meta property="og:type" content="website">
+<link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800&family=Inter+Tight:wght@800;900&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,400&display=swap">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <nav class="nav" aria-label="Main">
+      <a class="brand" href="#top" aria-label="Brinton Plays home">
+        <img src="images/logo-mark-simple.svg" width="54" height="46" alt="">
+        <span class="brand-word"><span>BRINTON</span><span>PLAYS<i>.</i></span></span>
+      </a>
+      <div class="nav-links">
+        <a href="#song">THE SONG</a>
+        <a class="nav-cta" href="#song">LISTEN</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="song" id="song" aria-labelledby="song-title">
+    <div class="wrap song-grid">
+      <div class="cover" role="img" aria-label="Cover art: the Brinton Plays mark">
+        <img src="images/logo-mark.svg" width="600" height="509" alt="">
+        <div class="cover-foot">
+          <span class="label">Brinton Plays</span>
+          <span class="label">Single · 2026</span>
+        </div>
+      </div>
+
+      <div class="song-info">
+        <p class="eyebrow">The first song</p>
+        <h2 class="song-title" id="song-title">Quarter Past Eight</h2>
+        <p class="song-lede"><strong>[One line on what the song is about.]</strong> [One line on where it came from: who, where, when.]</p>
+
+        <div class="player" aria-label="Song player">
+          <button class="play" id="play" type="button" aria-label="Play Quarter Past Eight">
+            <svg id="icon-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4.5v15l13-7.5z" fill="currentColor"/></svg>
+            <svg id="icon-pause" viewBox="0 0 24 24" aria-hidden="true" hidden><path d="M6 4h4v16H6zM14 4h4v16h-4z" fill="currentColor"/></svg>
+          </button>
+          <div class="track">
+            <div class="bar" id="bar" role="slider" tabindex="0" aria-label="Seek" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div class="bar-fill" id="fill"></div></div>
+            <div class="time"><span id="cur">0:00</span><span id="dur">Release coming soon</span></div>
+          </div>
+          <audio id="audio" src="audio/quarter-past-eight.mp3" preload="metadata"></audio>
+        </div>
+
+        <div class="listen">
+          <a href="#">SPOTIFY ↗</a>
+          <a href="#">APPLE MUSIC ↗</a>
+          <a href="#">YOUTUBE ↗</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap foot">
+    <span class="label">© 2026 Brinton Plays · A Brinton Builds sub-brand</span>
+    <div class="foot-links">
+      <a href="#song">THE SONG</a>
+      <a href="https://brintonbuilds.ca/">BRINTON BUILDS ↗</a>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js" defer></script>
+</body>
+</html>
