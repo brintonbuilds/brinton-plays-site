@@ -195,7 +195,11 @@ section[id] { scroll-margin-top: 24px; }
   margin-block: 4px 8px;
 }
 .story-copy .eyebrow { color: var(--orange); }
-.credits { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 16px; margin-top: 16px; font-size: 16px; }
+.credits { display: flex; flex-direction: column; gap: 6px; margin-top: 16px; font-size: 16px; }
+.credits .label { margin-bottom: 4px; }
+.story-copy .credits p { color: var(--bone); }
+.credits a { text-decoration: underline; text-decoration-color: var(--orange); text-underline-offset: 4px; }
+.credits a:hover { color: var(--orange); }
 .cover {
   aspect-ratio: 1 / 1;
   max-width: 100%;
