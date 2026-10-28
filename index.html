@@ -3,12 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Brinton Plays | Original Acoustic Country</title>
-<meta name="description" content="Original acoustic country from Andrew Brinton. Songs about family, home and the people who raised us.">
+<title>Quarter Past Eight | Brinton Plays</title>
+<meta name="description" content="Quarter Past Eight, the first original song from Andrew Brinton. Honest stories and an acoustic guitar.">
 <meta name="theme-color" content="#0A0A0A">
-<meta property="og:title" content="Brinton Plays">
-<meta property="og:description" content="Original acoustic country from Andrew Brinton. Songs about family, home and the people who raised us.">
-<meta property="og:type" content="website">
+<meta property="og:title" content="Quarter Past Eight | Brinton Plays">
+<meta property="og:description" content="Some of the most important conversations happen when the rest of the world goes quiet. The first original song from Andrew Brinton.">
+<meta property="og:type" content="music.song">
+<meta property="og:url" content="https://brintonplays.ca/">
+<link rel="canonical" href="https://brintonplays.ca/">
 <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -25,56 +27,94 @@
         <span class="brand-word"><span>BRINTON</span><span>PLAYS<i>.</i></span></span>
       </a>
       <div class="nav-links">
-        <a href="#song">THE SONG</a>
-        <a class="nav-cta" href="#song">LISTEN</a>
+        <a href="#story">THE STORY</a>
+        <a href="#about">ABOUT</a>
+        <a class="nav-cta" href="#listen">LISTEN</a>
       </div>
     </nav>
   </div>
 </header>
 
 <main id="top">
+
+  <!-- The song: first thing visitors see -->
   <section class="song" id="song" aria-labelledby="song-title">
-    <div class="wrap song-grid">
-      <div class="cover" role="img" aria-label="Cover art: the Brinton Plays mark">
-        <img src="images/logo-mark.svg" width="600" height="509" alt="">
+    <div class="wrap">
+      <div class="song-head">
+        <p class="eyebrow">The first original song</p>
+        <h1 class="song-title" id="song-title"><span>Quarter Past</span> <span>Eight</span></h1>
+        <p class="song-lede">Some of the most important conversations happen when the rest of the world goes quiet.</p>
+      </div>
+
+      <div class="player" id="listen" aria-label="Song player">
+        <button class="play" id="play" type="button" aria-label="Play Quarter Past Eight">
+          <svg id="icon-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4.5v15l13-7.5z" fill="currentColor"/></svg>
+          <svg id="icon-pause" viewBox="0 0 24 24" aria-hidden="true" hidden><path d="M6 4h4v16H6zM14 4h4v16h-4z" fill="currentColor"/></svg>
+        </button>
+        <div class="track">
+          <div class="track-meta">
+            <span class="track-name">Quarter Past Eight</span>
+            <span class="track-artist">Andrew Brinton</span>
+          </div>
+          <div class="bar" id="bar" role="slider" tabindex="0" aria-label="Seek" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-valuetext="0:00"><div class="bar-fill" id="fill"></div></div>
+          <div class="time"><span id="cur">0:00</span><span id="dur">--:--</span></div>
+        </div>
+        <audio id="audio" src="audio/quarter-past-eight.mp3" preload="metadata"></audio>
+      </div>
+
+      <!-- Streaming links: add a real release URL as href="https://..." to switch a link on. No href = shown as "soon", not clickable. -->
+      <div class="listen">
+        <span class="label" id="listen-status">Streaming soon on</span>
+        <a data-service="spotify" target="_blank" rel="noopener">SPOTIFY</a>
+        <a data-service="apple-music" target="_blank" rel="noopener">APPLE MUSIC</a>
+        <a data-service="youtube" target="_blank" rel="noopener">YOUTUBE</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- The story behind the song -->
+  <section class="story" id="story" aria-labelledby="story-title">
+    <div class="wrap story-grid">
+      <div class="story-copy">
+        <p class="eyebrow" id="story-title">The story behind the song</p>
+        <p class="story-lead">It started with muddy running shoes and a conversation before bed.</p>
+        <p>&ldquo;Quarter Past Eight&rdquo; was inspired by the ordinary moments I share with my son. The little conversations at the end of the day, the questions that come out when the house gets quiet and the things that matter more than we sometimes realize.</p>
+        <p>At its heart, it&rsquo;s a simple promise from a father to his son: no matter how old you get or what life throws your way, I&rsquo;ll always make time to listen.</p>
+        <p class="credits"><span class="label">Credits</span> Written and performed by Andrew Brinton.</p>
+      </div>
+
+      <div class="cover" role="img" aria-label="The Brinton Plays mark">
+        <img src="images/logo-mark.svg" width="600" height="509" alt="" loading="lazy">
         <div class="cover-foot">
           <span class="label">Brinton Plays</span>
           <span class="label">Single · 2026</span>
         </div>
       </div>
+    </div>
+  </section>
 
-      <div class="song-info">
-        <p class="eyebrow">The first song</p>
-        <h2 class="song-title" id="song-title">Quarter Past Eight</h2>
-        <p class="song-lede"><strong>[One line on what the song is about.]</strong> [One line on where it came from: who, where, when.]</p>
-
-        <div class="player" aria-label="Song player">
-          <button class="play" id="play" type="button" aria-label="Play Quarter Past Eight">
-            <svg id="icon-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4.5v15l13-7.5z" fill="currentColor"/></svg>
-            <svg id="icon-pause" viewBox="0 0 24 24" aria-hidden="true" hidden><path d="M6 4h4v16H6zM14 4h4v16h-4z" fill="currentColor"/></svg>
-          </button>
-          <div class="track">
-            <div class="bar" id="bar" role="slider" tabindex="0" aria-label="Seek" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div class="bar-fill" id="fill"></div></div>
-            <div class="time"><span id="cur">0:00</span><span id="dur">Release coming soon</span></div>
-          </div>
-          <audio id="audio" src="audio/quarter-past-eight.mp3" preload="metadata"></audio>
-        </div>
-
-        <div class="listen">
-          <a href="#">SPOTIFY ↗</a>
-          <a href="#">APPLE MUSIC ↗</a>
-          <a href="#">YOUTUBE ↗</a>
-        </div>
+  <!-- The artist -->
+  <section class="about" id="about" aria-labelledby="about-title">
+    <div class="wrap about-grid">
+      <h2 class="h2" id="about-title">The man behind <em>the music</em></h2>
+      <div class="about-copy">
+        <p class="about-lead">I&rsquo;m Andrew Brinton. A husband, a father and a guy who found a love for songwriting a little later in life.</p>
+        <p>I started singing at home years before I ever imagined recording my own music. A trip to Newfoundland in 2026 changed something in me. The people, the coastline, the family stories and the slower pace of life left me with things I wanted to put into songs.</p>
+        <p>I write about family, growing older, the things we carry and the moments we don&rsquo;t want to forget.</p>
+        <p class="about-sign">Nothing fancy. Just honest stories and an acoustic guitar.</p>
       </div>
     </div>
   </section>
+
 </main>
 
 <footer class="site-footer">
   <div class="wrap foot">
     <span class="label">© 2026 Brinton Plays · A Brinton Builds sub-brand</span>
     <div class="foot-links">
-      <a href="#song">THE SONG</a>
+      <a href="#listen">LISTEN</a>
+      <a href="#story">THE STORY</a>
+      <a href="#about">ABOUT</a>
       <a href="https://brintonbuilds.ca/">BRINTON BUILDS ↗</a>
     </div>
   </div>
