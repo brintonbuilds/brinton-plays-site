@@ -111,7 +111,7 @@ section[id] { scroll-margin-top: 24px; }
 .song-title {
   font-family: var(--f-display);
   font-weight: 900;
-  font-size: clamp(56px, 11.5vw, 156px);
+  font-size: clamp(56px, min(11.5vw, 19vh), 156px);
   line-height: 0.86;
   letter-spacing: -0.055em;
   text-transform: uppercase;
@@ -178,6 +178,24 @@ section[id] { scroll-margin-top: 24px; }
 .listen a[href]::after { content: " ↗"; }
 .listen a[href]:hover { color: var(--orange); }
 .listen a:not([href]) { color: #5E5B57; cursor: default; }
+
+/* Desktop: title across the top, line and player side by side, so play sits above the fold on laptop screens */
+@media (min-width: 1024px) {
+  .song { padding-block: clamp(40px, 8vh, 112px) clamp(64px, 8vw, 104px); }
+  .song .wrap {
+    display: grid;
+    grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+    grid-template-areas: "eyebrow eyebrow" "title title" "lede player" ". listen";
+    column-gap: clamp(40px, 5vw, 80px);
+    align-items: center;
+  }
+  .song-head { display: contents; }
+  .song-head .eyebrow { grid-area: eyebrow; margin-bottom: 24px; }
+  .song-title { grid-area: title; }
+  .song-lede { grid-area: lede; margin-top: clamp(32px, 5vh, 56px); }
+  .player { grid-area: player; margin-top: clamp(32px, 5vh, 56px); max-width: none; }
+  .listen { grid-area: listen; margin-top: 20px; }
+}
 
 /* The story behind the song */
 .story { padding-block: clamp(80px, 10vw, 140px); background: var(--panel); }
