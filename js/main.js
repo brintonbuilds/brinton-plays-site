@@ -38,6 +38,40 @@
   audio.addEventListener('pause', function () { setPlaying(false); });
   audio.addEventListener('ended', function () { setPlaying(false); });
 
+  // Listening events for Google Analytics (see gtag in index.html)
+  var started = false, milestones = [25, 50, 75];
+  function track(name, extra) {
+    if (typeof gtag !== 'function') return;
+    var params = {
+      song_title: 'Quarter Past Eight',
+      audio_current_time: Math.round(audio.currentTime),
+      audio_duration: Math.round(audio.duration) || 0,
+      audio_percent: audio.duration ? Math.round((audio.currentTime / audio.duration) * 100) : 0
+    };
+    for (var k in extra) params[k] = extra[k];
+    gtag('event', name, params);
+  }
+  audio.addEventListener('play', function () {
+    if (!started) { started = true; track('song_start'); }
+    else track('song_resume');
+  });
+  audio.addEventListener('pause', function () {
+    // The browser also fires pause when the song finishes; that counts as complete
+    if (!audio.ended) track('song_pause');
+  });
+  audio.addEventListener('ended', function () {
+    track('song_complete');
+    started = false;
+    milestones = [25, 50, 75];
+  });
+  audio.addEventListener('timeupdate', function () {
+    if (!audio.duration || !milestones.length) return;
+    var p = (audio.currentTime / audio.duration) * 100;
+    while (milestones.length && p >= milestones[0]) {
+      track('song_progress', { audio_percent: milestones.shift() });
+    }
+  });
+
   play.addEventListener('click', function () {
     if (audio.paused) { var p = audio.play(); if (p && p.catch) p.catch(unavailable); }
     else audio.pause();
